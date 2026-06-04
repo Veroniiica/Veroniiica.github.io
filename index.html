@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Archive Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --bg:#f3f1ee;
+    --text:#2f2f2f;
+    --sub:#7a7a7a;
+    --accent:#9c4f42;
+    --line:#ddd8d2;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    height:100vh;
+    overflow:hidden;
+}
+
+.layout{
+    display:grid;
+    grid-template-columns:260px 1fr 520px;
+    height:100vh;
+}
+
+/* LEFT */
+
+.sidebar{
+    padding:60px 40px;
+    border-right:1px solid var(--line);
+
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+
+.archive-title{
+    font-size:12px;
+    letter-spacing:3px;
+    color:var(--accent);
+    text-transform:uppercase;
+    margin-bottom:24px;
+}
+
+.archive-heading{
+    font-size:34px;
+    line-height:1;
+    font-weight:600;
+    letter-spacing:-1px;
+}
+
+.archive-info{
+    color:var(--sub);
+    line-height:1.8;
+    font-size:14px;
+}
+
+/* CENTER */
+
+.project-list{
+    overflow-y:auto;
+    padding:60px;
+}
+
+.project-item{
+    border-bottom:1px solid var(--line);
+    padding:38px 0;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.project-item:hover{
+    padding-left:16px;
+}
+
+.project-item.active{
+    padding-left:16px;
+}
+
+.project-number{
+    color:var(--accent);
+    font-size:13px;
+    letter-spacing:2px;
+    margin-bottom:12px;
+}
+
+.project-title{
+    font-size:clamp(2rem,3vw,3rem);
+    letter-spacing:-2px;
+    margin-bottom:10px;
+}
+
+.project-category{
+    color:var(--sub);
+    font-size:15px;
+}
+
+/* RIGHT */
+
+.preview{
+    border-left:1px solid var(--line);
+    padding:40px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.preview-image{
+    width:100%;
+    height:520px;
+    border-radius:20px;
+    overflow:hidden;
+    margin-bottom:32px;
+    background:#e6e2dd;
+}
+
+.preview-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.preview-number{
+    color:var(--accent);
+    font-size:13px;
+    letter-spacing:2px;
+    margin-bottom:12px;
+}
+
+.preview-title{
+    font-size:36px;
+    letter-spacing:-2px;
+    margin-bottom:18px;
+}
+
+.preview-description{
+    color:var(--sub);
+    line-height:1.8;
+    max-width:420px;
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar{
+    width:6px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#d0cbc5;
+    border-radius:20px;
+}
+
+/* MOBILE */
+
+@media(max-width:1100px){
+
+body{
+    overflow:auto;
+}
+
+.layout{
+    display:block;
+}
+
+.sidebar{
+    border-right:none;
+    border-bottom:1px solid var(--line);
+}
+
+.preview{
+    border-left:none;
+    border-top:1px solid var(--line);
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="layout">
+
+    <!-- LEFT -->
+
+    <aside class="sidebar">
+
+        <div>
+
+            <div class="archive-title">
+                Archive
+            </div>
+
+            <div class="archive-heading">
+                Selected<br>
+                Works
+            </div>
+
+        </div>
+
+        <div class="archive-info">
+            Lorem ipsum dolor sit amet.<br>
+            Consectetur adipiscing elit.<br>
+            Sed do eiusmod tempor.
+        </div>
+
+    </aside>
+
+    <!-- CENTER -->
+
+    <main class="project-list">
+
+        <div class="project-item active"
+             data-image="https://picsum.photos/1200/800?random=11"
+             data-title="Digital Systems"
+             data-number="01"
+             data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum feugiat sem vitae nibh pellentesque, sed posuere velit finibus.">
+
+            <div class="project-number">01</div>
+            <div class="project-title">Digital Systems</div>
+            <div class="project-category">Research Archive</div>
+
+        </div>
+
+        <div class="project-item"
+             data-image="https://picsum.photos/1200/800?random=22"
+             data-title="Service Architecture"
+             data-number="02"
+             data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pulvinar tincidunt erat sed feugiat.">
+
+            <div class="project-number">02</div>
+            <div class="project-title">project 2</div>
+            <div class="project-category">Case Collection</div>
+
+        </div>
+
+        <div class="project-item"
+             data-image="https://picsum.photos/1200/800?random=33"
+             data-title="Research Library"
+             data-number="03"
+             data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi convallis lacus ac tellus dignissim posuere.">
+
+            <div class="project-number">03</div>
+            <div class="project-title">project 3</div>
+            <div class="project-category">Field Notes</div>
+
+        </div>
+
+        <div class="project-item"
+             data-image="https://picsum.photos/1200/800?random=44"
+             data-title="Workflow Intelligence"
+             data-number="04"
+             data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ut neque ut libero tristique porttitor.">
+
+            <div class="project-number">04</div>
+            <div class="project-title">Workflow Intelligence</div>
+            <div class="project-category">Experiment</div>
+
+        </div>
+
+        <div class="project-item"
+             data-image="https://picsum.photos/1200/800?random=55"
+             data-title="Visual Studies"
+             data-number="05"
+             data-description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt sapien et sem pretium luctus.">
+
+            <div class="project-number">05</div>
+            <div class="project-title">Visual Studies</div>
+            <div class="project-category">Exploration</div>
+
+        </div>
+
+    </main>
+
+    <!-- RIGHT -->
+
+    <section class="preview">
+
+        <div class="preview-image">
+            <img id="previewImg"
+                 src="https://picsum.photos/1200/800?random=11">
+        </div>
+
+        <div class="preview-number" id="previewNumber">
+            01
+        </div>
+
+        <div class="preview-title" id="previewTitle">
+            Digital Systems
+        </div>
+
+        <div class="preview-description" id="previewDescription">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Vestibulum feugiat sem vitae nibh pellentesque.
+        </div>
+
+    </section>
+
+</div>
+
+<script>
+
+const items = document.querySelectorAll('.project-item');
+
+const img = document.getElementById('previewImg');
+const title = document.getElementById('previewTitle');
+const desc = document.getElementById('previewDescription');
+const number = document.getElementById('previewNumber');
+
+items.forEach(item => {
+
+    item.addEventListener('mouseenter', () => {
+
+        items.forEach(i => i.classList.remove('active'));
+
+        item.classList.add('active');
+
+        img.src = item.dataset.image;
+        title.textContent = item.dataset.title;
+        desc.textContent = item.dataset.description;
+        number.textContent = item.dataset.number;
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>
