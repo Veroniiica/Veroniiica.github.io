@@ -1,0 +1,410 @@
+:root {
+  --stage-width: 1920;
+  --stage-height: 1993;
+  --ink: #00005f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  min-height: 100svh;
+  overflow-x: hidden;
+  background: linear-gradient(180deg, #008df9 0%, #b1bef7 100%);
+  font-family: Inter, Arial, Helvetica, sans-serif;
+}
+
+#app {
+  width: 100%;
+  min-height: var(--stage-render-height, 100svh);
+  overflow: hidden;
+}
+
+.viewport {
+  position: relative;
+  width: 100%;
+  height: var(--stage-render-height, 100svh);
+  min-height: 100svh;
+  overflow: hidden;
+  background: linear-gradient(180deg, #008df9 0%, #b1bef7 100%);
+}
+
+.stage {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 1920px;
+  height: 1993px;
+  overflow: hidden;
+  background: linear-gradient(180deg, #008df9 0%, #b1bef7 81.25%, #b1bef7 100%);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  transform: translateX(-50%) scale(var(--stage-scale, 1));
+  transform-origin: top center;
+}
+
+.cloud {
+  position: absolute;
+  pointer-events: none;
+  transition: transform 120ms ease-out;
+  will-change: transform;
+  z-index: 1;
+}
+
+.cloud img,
+.portfolio img,
+.nav-wrap img,
+.dot img {
+  display: block;
+  pointer-events: none;
+  user-select: none;
+}
+
+.cloud-viewport {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.cloud img {
+  position: absolute;
+  top: -104.45%;
+  left: -116.17%;
+  width: 333.91%;
+  height: 320.47%;
+  max-width: none;
+}
+
+.cloud1 {
+  top: 721px;
+  left: -99px;
+  width: 555px;
+  height: 252px;
+}
+
+.cloud2 {
+  top: 489px;
+  left: 1173px;
+  width: 490px;
+  height: 223px;
+  z-index: 3;
+}
+
+.cloud3 {
+  top: 98px;
+  left: 1562px;
+  width: 415px;
+  height: 190px;
+  filter: blur(1.95px);
+}
+
+.cloud4 {
+  top: 1400px;
+  left: 211px;
+  width: 305px;
+  height: 165px;
+  filter: blur(2.45px);
+}
+
+.cloud5 {
+  top: 38px;
+  left: 135px;
+  width: 212px;
+  height: 96px;
+  filter: blur(7.15px);
+}
+
+.cloud6 {
+  top: 1821px;
+  left: 1156px;
+  width: 492px;
+  height: 110px;
+  filter: blur(14.8px);
+}
+
+.cloud7 {
+  top: 1088px;
+  left: 1488px;
+  width: 356px;
+  height: 162px;
+  filter: blur(7.15px);
+}
+
+.portfolio {
+  position: absolute;
+  top: 327px;
+  left: 427px;
+  width: 1067px;
+  height: 346px;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.portfolio img {
+  position: absolute;
+  top: -42.56%;
+  left: -7.26%;
+  width: 110.62%;
+  height: 191.6%;
+  max-width: none;
+}
+
+.nav-wrap {
+  position: absolute;
+  top: 259px;
+  left: 179px;
+  width: 310.355px;
+  height: 207.625px;
+  background: transparent;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.nav-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.headline {
+  position: absolute;
+  margin: 0;
+  color: var(--ink);
+  font-size: 36px;
+  font-weight: 400;
+  line-height: normal;
+  white-space: nowrap;
+  z-index: 4;
+}
+
+.hello {
+  top: 244px;
+  left: 763px;
+}
+
+.veronica {
+  top: 263px;
+  left: 888px;
+}
+
+.intro {
+  position: absolute;
+  top: 693px;
+  left: 50%;
+  display: flex;
+  width: 888px;
+  transform: translateX(-50%);
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  color: var(--ink);
+  z-index: 4;
+}
+
+.intro-title {
+  width: 888px;
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: normal;
+  text-align: center;
+}
+
+.tag-list {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tag-list li {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.dot {
+  position: relative;
+  width: 6px;
+  height: 6px;
+  flex: 0 0 6px;
+}
+
+.dot img {
+  width: 100%;
+  height: 100%;
+}
+
+.scroll-down-group {
+  position: absolute;
+  top: 847px;
+  left: 903px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 115px;
+  height: 74px;
+  color: rgba(0, 0, 95, 0.45);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: normal;
+  pointer-events: none;
+  text-align: center;
+  z-index: 4;
+  animation: scrollBlink 3.5s ease-in-out infinite;
+}
+
+.scroll-arrow {
+  position: absolute;
+  top: 0;
+  left: 35.73px;
+  width: 34.716px;
+  height: 41.906px;
+  object-fit: contain;
+}
+
+.scroll-down-group span {
+  position: absolute;
+  top: 49.84px;
+  left: 0;
+  width: 115px;
+}
+
+.about-content {
+  position: absolute;
+  top: 1130px;
+  left: 383px;
+  display: flex;
+  width: 1154px;
+  flex-direction: column;
+  gap: 100px;
+  color: var(--ink);
+  z-index: 4;
+}
+
+.about-section,
+.experience-column {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.section-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: #4c4cb2;
+  font-family: "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  line-height: 1.5;
+  text-transform: capitalize;
+}
+
+.section-heading p {
+  margin: 0;
+}
+
+.section-heading p:first-child {
+  font-size: 20px;
+}
+
+.section-heading p:last-child {
+  font-size: 16px;
+}
+
+.text-block {
+  display: flex;
+  width: 1154px;
+  flex-direction: column;
+  gap: 12px;
+  font-family: "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.text-block p,
+.timeline-item p {
+  margin: 0;
+}
+
+.experience-grid {
+  display: flex;
+  width: 1154px;
+  align-items: flex-start;
+  gap: 120px;
+  text-transform: capitalize;
+}
+
+.experience-column:first-child {
+  width: 564px;
+}
+
+.experience-column:last-child {
+  width: 470px;
+}
+
+.timeline-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.timeline-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: var(--ink);
+  font-family: "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+}
+
+.timeline-main {
+  display: flex;
+  gap: 18px;
+  font-size: 24px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.timeline-subtitle {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+@keyframes scrollBlink {
+  0%,
+  28.5714% {
+    opacity: 1;
+  }
+
+  42.8571%,
+  57.1429% {
+    opacity: 0;
+  }
+
+  71.4286%,
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cloud {
+    transition-duration: 220ms !important;
+  }
+
+  .scroll-down-group {
+    animation: none;
+  }
+}
